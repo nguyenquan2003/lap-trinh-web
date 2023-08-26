@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trang chủ</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0 auto;
+        }
+        body{
+            width:100%;
+        }
+        .menu li{
+            display:inline-block;
+            padding:10px;
+            background:red;
+        }
+        .menu li a{
+            color:white;
+            font-weight:bold;
+            text-decoration:none;
+        }
+        .menu li:hover{
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="~/Home/TrangChu">Trang chủ</a></li>
+        <li><a href="~/Home/GioiThieu">Giới thiệu</a></li>
+        <li><a href="~/TinTuc/DanhSachTinTuc">Tin tức</a></li>
+    </ul>
+    <div> 
+        Trang chủ - Home
+    </div>
+</body>
+</html>

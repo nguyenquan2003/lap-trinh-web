@@ -1,0 +1,24 @@
+﻿@using TH2B3.Models
+@{
+    Layout = null;
+    
+    var empl = ViewData["empl"] as NhanVien;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    <div>
+        <h2>THÔNG TIN NHÂN VIÊN </h2>
+        <p>Mã Nhân viên: <b>@empl.MaNV</b></p>
+        <p>Tên Nhân Viên: <b>@empl.TenNV</b></p>
+        <p>Giới tính: <b>@empl.GT</b></p>
+        <p>Hình Nhân viên: <b>@empl.Hinh</b></p>
+    </div>
+</body>
+</html>

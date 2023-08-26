@@ -1,0 +1,51 @@
+﻿@*class ten tinh_toan@model int*@
+
+@*class SinhVien cách 1: @model WebApplication1.Models.SinhVien*@
+@model List<WebApplication1.Models.SinhVien>
+
+@*ngoài list ra còn có IEnumerable
+@model IEnumerable<WebApplication1.Models.SinhVien>*@
+
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    //nếu ko có layout mất luôn toàn bộ header, footer và css
+    ViewBag.title = "Trang chủ";
+    WebApplication1.Models.SinhVien SV = (WebApplication1.Models.SinhVien)ViewBag.SV;//khai báo kiủ dữ liệu và ép kiủ
+}
+<main>
+    <div class="page-section features" style="margin: 150px 0px">
+        @*class Math*@
+        @*cách 1: Con số tử controller truyền sang view: A = @ViewBag.A*@
+        @*cách 2: Con số tử controller truyền sang view: A = @Model*@
+
+        @*class SinhVien*@
+        @*cách 1: Con số tử controller truyền sang view: A = @Model.HoTen*@
+        @*cách 2: Con số tử controller truyền sang view: A = @SV.HoTen*@
+        <h4>Danh sách sinh viên : </h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Mã số</td>
+                    <td>Họ và tên</td>
+                    <td>Lớp</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach(var item in Model)
+                 {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.MaSo</td>
+                        <td>@item.HoTen</td>
+                        <td>@item.Lop</td>
+                    </tr>
+                 }
+            </tbody>
+        </table>
+    </div> <!-- .page-section -->
+
+</main>

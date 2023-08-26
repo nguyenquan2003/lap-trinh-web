@@ -1,0 +1,23 @@
+﻿@using TH2B3.Models;
+@{
+    Layout = null;
+    var empl = ViewData["empl"] as Employee;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Employee Detail</h2>
+        <p>Employee ID<b>@empl.ID</b></p>
+        <p>Employee Name<b>@empl.Name</b></p>
+        <p>Employee Address<b>@empl.Address</b></p>
+        <p>Employee Salary<b>@empl.Salary</b></p>
+    </div>
+</body>
+</html>
