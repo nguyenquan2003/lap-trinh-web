@@ -1,0 +1,26 @@
+﻿@using Bai1.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @{ 
+            var user = Session["user"] as User;
+        }
+        @if(user != null)
+            {
+                <h2>Wellcome @user.UserName !</h2>
+                @Html.ActionLink("Đăng Xuất", "Dãnguat", "DN");
+            }
+
+    </div>
+</body>
+</html>

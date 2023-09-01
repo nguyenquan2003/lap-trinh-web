@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+@model Bai1.Models.KhoaModels
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>@Model.Message</h2>
+        Thông tin khoa
+        Tên Khoa: @Model.TenKhoa <br />
+        Năm thành lập: @Model.NamThanhLap <br />
+    </div>
+</body>
+</html>

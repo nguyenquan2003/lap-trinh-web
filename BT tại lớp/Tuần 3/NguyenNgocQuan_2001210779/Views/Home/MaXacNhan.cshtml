@@ -1,0 +1,94 @@
+﻿@using NguyenNgocQuan_2001210779.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MHXacNhan</title>
+</head>
+<body>
+    <h1>ARE YOU READY YOUR INFOMATION IS CORRECT</h1>
+    @{
+        var info = Session["info"] as Infomation;
+        if (info != null)
+        {
+            <p>Your FullName is: <span style="color:red;">@info.FullName</span></p>
+            <p>Your ID Student is: <span style="color:red;">@info.IdStudent</span></p>
+            <p>Your Email is: <span style="color:red;">@info.Email</span></p>
+            <p>Your Photo: <img src="Assets\Image\@info.FileImage" width="20%" /></p>
+            <p>Your Note is: <span style="color:red;">@info.Note</span></p>
+
+            <p>
+                We are known by: <span style="color:red;">
+                    @{
+                        string str = "";
+                        if (info.Check1) { str += "Television; "; }
+                        if (info.Check2) { str += "Website; "; }
+                        if (info.Check3) { str += "Newspage; "; }
+                        @str
+                    }
+                </span>
+            </p>
+
+            <p>
+                Choose Work Time: <span style="color:red;">
+                    @{
+                        string str1 = "";
+                        switch (info.ChooseWorkTime)
+                        {
+                            case "1":
+                                str1 = "Morning (2-4-6)";
+                                break;
+                            case "2":
+                                str1 = "Afternoon (2-4-6)";
+                                break;
+                            case "3":
+                                str1 = "Morning (3-5-7)";
+                                break;
+                            case "4":
+                                str1 = "Afternoon (3-5-7)";
+                                break;
+                        }
+                        @str1
+                    }
+                </span>
+            </p>
+
+            <p>
+                Select a course: <span style="color:red;">
+                    @{
+                        string str2 = "";
+                        switch (info.SelectCourse)
+                        {
+                            case "1":
+                                str2 = "Html CSS Bootstrap";
+                                break;
+                            case "2":
+                                str2 = "JavaScript";
+                                break;
+                            case "3":
+                                str2 = "Webform";
+                                break;
+                            case "4":
+                                str2 = "ASP.Net MVC";
+                                break;
+                            case "5":
+                                str2 = "Web Services";
+                                break;
+                        }
+                        @str2;
+                    }
+                </span>
+            </p>
+        }
+        else
+        {
+            <h3>If your information is incorrect, please go back @Html.ActionLink("INDEX PAGE", "index")</h3>
+        }
+    }
+</body>
+</html>
