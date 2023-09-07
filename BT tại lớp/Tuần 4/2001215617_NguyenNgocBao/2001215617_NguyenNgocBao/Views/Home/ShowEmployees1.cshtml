@@ -1,0 +1,41 @@
+﻿@model IEnumerable<_2001215617_NguyenNgocBao.Models.Employee>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowEmployees1</title>
+</head>
+<body>
+    <div class="container">
+        <h2 style="font-weight:bold;">LIST OF EMPLOYEES</h2>
+        <table class="table table-bordered table-responsive">
+            <thead style="background-color:blue; color: white;">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>GENDER</th>
+                    <th>CITY</th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Gender</td>
+                    <td>@item.City</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    
+</body>
+</html>
