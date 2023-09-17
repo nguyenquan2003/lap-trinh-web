@@ -1,0 +1,40 @@
+﻿@model List<WebApplication1.Models.MayTinh>
+
+@{
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    //nếu ko có layout mất luôn toàn bộ header, footer và css
+    ViewBag.title = "Trang chủ";
+}
+<main>
+    <div class="page-section features" style="margin: 150px 0px">
+        <h4>Danh sách 2 máy tính giá thấp nhất: </h4>
+        <p>
+            <a href="">2 chiếc giá thấp nhất</a>
+        </p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Mã máy</th>
+                    <th>Dòng máy</th>
+                    <th>Giá bán</th>
+                    <th>Ngàysản xuất</th>
+                    <th>Hãng sản xuất</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.MaMay</td>
+                        <td>@item.DongMay</td>
+                        <td>@string.Format("{0:#,0}", item.GiaBan)</td>
+                        <td>@string.Format("{0:dd-MM-yyyy}", item.NgaySanXuat)</td>
+                        <td>@item.HangSanXuat</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div> <!-- .page-section -->
+
+</main>
