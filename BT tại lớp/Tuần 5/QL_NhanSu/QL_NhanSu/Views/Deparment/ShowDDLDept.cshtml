@@ -1,0 +1,29 @@
+﻿@model IEnumerable<QL_NhanSu.Models.Deparment>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowDDLDept</title>
+</head>
+<body>
+   <div class="container">
+       <table class="table bordered">
+           @foreach(var item in Model)
+           {
+               <tr>
+                   <td>
+                       @Html.ActionLink(item.Name, "ShowListEmplByDept", "Deparment", new { id=item.DeptID},null)
+                   </td>
+               </tr>
+           }
+       </table>
+   </div>
+   
+</body>
+</html>

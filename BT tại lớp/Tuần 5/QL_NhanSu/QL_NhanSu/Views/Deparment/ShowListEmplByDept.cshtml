@@ -1,0 +1,44 @@
+﻿@model QL_NhanSu.Models.Deparment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowListEmplByDept</title>
+</head>
+<body>
+    <h2 style="color:blue;font-weight:bold;">DANH SÁCH NHÂN VIÊN THEO PHÒNG BAN</h2>
+    <br />
+    <b>Phòng: </b>@Html.DisplayFor(model=>model.Name)
+    <br />
+    <table class="table">
+        <tr style="background-color:darkblue;color:white;">
+            <th>Mã NV</th>
+            <th>Họ Hên</th>
+            <th>Giới tính</th>
+            <th>Thành Phố</th>
+        </tr>
+        
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+               @item.Name
+            </td>
+            <td>
+                @item.Gender
+            </td>
+            <td>
+                @item.City
+            </td>
+        </tr>
+    
+    </table>
+</body>
+</html>

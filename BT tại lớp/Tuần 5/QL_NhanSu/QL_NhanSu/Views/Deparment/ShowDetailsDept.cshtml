@@ -1,0 +1,33 @@
+﻿@model QL_NhanSu.Models.Deparment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowDetailsDept</title>
+</head>
+<body>
+    <div>
+        <h2>CHI TIẾT PHÒNG BAN</h2>
+        <br />
+
+           
+            <b>MaPB: </b>@Html.DisplayFor(model => model.DeptID, new
+            {
+                @class = "form-control",
+                style = "color:red;font-weight:bold;"
+            })
+            <br />
+            <b>TênPB: </b>@Html.DisplayFor(model => model.Name)
+            <br />
+            <b>Số NV: </b>@ViewData["sl"]
+        <p>@Html.ActionLink("Back to Deparment List", "ShowDeparment")</p>
+
+    </div>
+</body>
+</html>
