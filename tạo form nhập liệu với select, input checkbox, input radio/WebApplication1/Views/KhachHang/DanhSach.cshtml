@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication1.Models.KhachHang>
+
+@{
+    ViewBag.Title = "Danh Sách Khách Hàng";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="container" style="margin-top:120px; min-height:80vh">
+    <div class="col-md-12">
+        <h5>Danh sách khách hàng</h5>
+        <a class="btn btn-sm btn-success" style="float: right; margin-top: -50px; font-size: 15px;" href="~/KhachHang/ThemMoi">
+            Thêm mới khách hàng
+        </a>
+    </div>
+
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th style="white-space: nowrap">
+                    Tên Khách Hàng
+                </th>
+                <th style="white-space: nowrap">
+                    Số Điện Thoại
+                </th>
+                <th style="white-space: nowrap">
+                    Địa Chỉ Nhận Hàng
+                </th>
+                <th style="white-space: nowrap">
+                    Email
+                </th>
+                <th style="white-space: nowrap">
+                    Giới Tính
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenKhachHang)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoDienThoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaChiNhanHang)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GioiTinh)
+                    </td>
+                    <td style="white-space: nowrap">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
