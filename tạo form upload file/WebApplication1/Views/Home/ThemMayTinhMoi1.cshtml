@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "ThemMayTinhMoi1";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<main>
+    <div class="page-section features" style="margin: 150px 0px">
+        <div class="container">
+            <h4>Thêm máy tính mới: </h4>
+            <form action="/Home/LuuThemMayTinhMoi" method="get"> @*//điền cái controler vào*@
+                <div class="form-group">
+                    <label for="email">Mã máy:</label>
+                    <input type="text" class="form-control" name="Ma_May">
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd">Dòng máy:</label>
+                    <input type="text" class="form-control" name="Dong_May">
+                </div>
+
+                <div class="form-group">
+                    <label for="gia">Giá bán:</label>
+                    <input type="number" class="form-control" name="Gia_Ban">
+                </div>
+
+                <div class="form-group">
+                    <label for="ngay">Ngày sản xuất:</label>
+                    <input type="date" class="form-control" name="Ngay_San_Xuat">
+                </div>
+
+                <div class="form-group">
+                    <label for="hang">Hãng sản xuất:</label>
+                    <input type="text" class="form-control" name="Hang_San_Xuat">
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</main>
