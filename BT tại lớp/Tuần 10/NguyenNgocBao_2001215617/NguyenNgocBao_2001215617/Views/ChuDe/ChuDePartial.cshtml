@@ -1,0 +1,22 @@
+﻿@model IEnumerable<NguyenNgocBao_2001215617.Models.ChuDe>
+
+
+
+
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:darkorange;">
+        <a href="#" style="text-transform:uppercase; text-decoration:none; color:white; font-weight:bold;">Chủ Đề Sách</a>
+    </li>
+
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            @item.TenChuDe
+        </li>
+      
+    }
+
+    <li class="list-group-item">
+        <a href="#" style="text-transform:uppercase; text-decoration:none;"> </a>
+    </li>
+</ul>

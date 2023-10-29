@@ -1,0 +1,37 @@
+﻿@model NguyenNgocBao_2001215617.Models.Sach
+
+@{
+    ViewBag.Title = "XemChiTietSach";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>XemChiTietSach</h2>
+
+<div class="card border-dark">
+    <table class="border-dark mx-3 mb-3 mt-3"  >
+        <tr class="text-left">
+            <td rowspan="5" width="45%">
+                <img class="card-header" src="@Url.Content("~/HinhAnhSP/"+ Model.AnhBia)" width="100%" height="100%" alt="Image"/>
+
+            </td>
+            <td width="20%">Ten sach:</td>
+            <td width="35%" style="font-weight:bold; color:blue">@Model.TenSach</td>
+        </tr>
+        <tr class="text-left">
+            <td>Ten chu de:</td>
+            <td style="color:blue">@Model.ChuDe.TenChuDe</td>
+        </tr>
+        <tr>
+            <td>Ten NXB:</td>
+            <td style="color:blue">@Model.NhaXuatBan.TenNXB</td>
+        </tr>
+        <tr>
+            <td>Noi dung tom tat</td>
+            <td class="text-justify">@Model.MoTa</td>
+        </tr>
+        <tr>
+            <td>Gia ban:</td>
+            <td style="font-weight:bold;color:red">@string.Format("{0:0,0}",@Model.GiaBan) VND</td>
+        </tr>
+    </table>
+</div>

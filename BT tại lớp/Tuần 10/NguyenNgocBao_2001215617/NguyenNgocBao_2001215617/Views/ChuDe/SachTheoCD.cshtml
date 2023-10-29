@@ -1,0 +1,16 @@
+﻿@model IEnumerable<NguyenNgocBao_2001215617.Models.ChuDe>
+
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:darkorange;" ><a href="#" style="text-transform:uppercase; text-decoration:none;"></a>
+        @{
+            foreach(var item in Model)  
+            {
+                <li>
+                    <a href="/Sach/SachTheoCD/?id=@item.MaChuDe">@item.TenChuDe</a>
+                </li>       
+            }
+        <li class="list-group-item"><a href="#" style="text-transform:uppercase; text-decoration:none;"></a></li>
+        }
+    </li>
+
+</ul>

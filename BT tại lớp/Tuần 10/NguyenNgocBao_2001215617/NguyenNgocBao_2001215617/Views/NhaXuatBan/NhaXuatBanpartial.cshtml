@@ -1,0 +1,18 @@
+﻿@model IEnumerable<NguyenNgocBao_2001215617.Models.NhaXuatBan>
+
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:darkorange;">
+        <a href="#" style="text-transform:uppercase; text-decoration:none; color:white; font-weight:bold;">Nhà Xuất Bản</a>
+    </li>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            @item.TenNXB
+        </li>
+        
+    }
+
+    <li class="list-group-item">
+        <a href="#" style="text-transform:uppercase; text-decoration:none;"> </a>
+    </li>
+</ul>

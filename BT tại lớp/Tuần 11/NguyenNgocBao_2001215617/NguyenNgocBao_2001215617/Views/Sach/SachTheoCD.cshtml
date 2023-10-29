@@ -1,0 +1,35 @@
+﻿@model IEnumerable<NguyenNgocBao_2001215617.Models.Sach>
+
+@{
+    ViewBag.Title = "SachTheo CD ";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<h2>LIST BOOK theo CD</h2>
+
+<div class="row">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-4">
+                <img src="@Url.Content("~/HinhAnhSP/"+item.AnhBia)" width="70%" height="70%" alt="Image" />
+                @if (item.TenSach.Length > 30)
+                {
+                    <p>
+                        <strong title="@item.TenSach">Tieu de: @item.TenSach.Substring(0, 30)...</strong>
+
+                        <a href="@Url.Action("XemChiTietSach", new { @ms=item.MaSach})">Xem Chi Tiet</a>
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        <strong title="@item.TenSach">Tieu de: @item.TenSach</strong>
+
+                        <a href="@Url.Action("XemChiTietSach", new { @ms=item.MaSach})">Xem Chi Tiet</a>
+                    </p>
+                }
+            </div>
+        }
+    }
+</div>
