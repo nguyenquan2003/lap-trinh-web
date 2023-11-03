@@ -1,0 +1,78 @@
+﻿@model WebApplication1.Models.DonHang
+
+@{
+    ViewBag.Title = "Cập Nhật Đơn Hàng";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="container" style="padding-top: 120px; min-height: 700px">
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Cập nhật đơn hàng</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(m=>m.ID)
+                    <div class="form-group">
+                        <label class="control-label col-md-2">ID</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control", type = "number" } })
+                            @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" style="white-space: nowrap;">Tên khách hàng</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TenKhachHang, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TenKhachHang, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" style="white-space: nowrap;">Số điện thoại</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.SoDienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.SoDienThoai, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" style="white-space: nowrap;">Địa chỉ giao hàng</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.DiaChiGiaoHang, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DiaChiGiaoHang, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2" style="white-space: nowrap;">Ngày đặt hàng</label>
+                        <div class="col-md-10">
+                            <input class="form-control" name="NgayDatHang" type="datetime-local" value="@((Model.NgayDatHang ?? DateTime.Now).ToString("yyyy-MM-ddTHH:mm:ss"))" />
+                            @Html.ValidationMessageFor(model => model.NgayDatHang, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button type="submit" class="btn btn-success btn-sm">Create</button>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </div>
+</div>

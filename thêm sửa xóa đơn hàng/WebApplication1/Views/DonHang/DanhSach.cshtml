@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApplication1.Models.DonHang>
+
+@{
+    ViewBag.Title = "Danh Sách Đơn Hàng";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="container" style="padding-top: 120px; min-height: 700px">
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Danh sách đơn hàng</h5>
+            <a class="btn btn-sm btn-success" style="float: right; margin-top: -50px; font-size: 15px;" href="~/DonHang/ThemDonHang">
+                Thêm đơn hàng
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th style="white-space: nowrap">
+                        Tên Khách Hàng
+                    </th>
+                    <th style="white-space: nowrap">
+                        Số Điện Thoại
+                    </th>
+                    <th style="white-space: nowrap">
+                        Địa Chỉ Giao Hàng
+                    </th>
+                    <th style="white-space: nowrap">
+                        Ngày Đặt Hàng
+                    </th>
+                    <th style="white-space: nowrap">
+                        #
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.ID
+                        </td>
+                        <td>
+                            @item.TenKhachHang
+                        </td>
+                        <td>
+                            @item.SoDienThoai
+                        </td>
+                        <td>
+                            @item.DiaChiGiaoHang
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NgayDatHang)
+                        </td>
+                        <td style="white-space: nowrap;">
+                            @Html.ActionLink("Edit", "CapNhatDonHang", new { idDonHang = item.ID }) |
+                            @Html.ActionLink("Delete", "XoaDonHang", new { idDonHang = item.ID })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

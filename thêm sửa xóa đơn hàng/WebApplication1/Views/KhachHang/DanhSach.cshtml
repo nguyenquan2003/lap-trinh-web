@@ -1,0 +1,82 @@
+﻿@model IEnumerable<WebApplication1.Models.KhachHang>
+
+@{
+    ViewBag.Title = "Danh Sách Khách Hàng";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="container" style="margin-top:120px; min-height:80vh">
+    <div class="col-md-12">
+        <h5>Danh sách khách hàng</h5>
+        <a class="btn btn-sm btn-success" style="float: right; margin-top: -50px; font-size: 15px;" href="~/KhachHang/ThemMoi">
+            Thêm mới khách hàng
+        </a>
+    </div>
+
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <tr>
+                <th style="white-space: nowrap">
+                    Tên Khách Hàng
+                </th>
+                <th style="white-space: nowrap">
+                    Số Điện Thoại
+                </th>
+                <th style="white-space: nowrap">
+                    Địa Chỉ Nhận Hàng
+                </th>
+                <th style="white-space: nowrap">
+                    Email
+                </th>
+                <th style="white-space: nowrap">
+                    Giới Tính
+                </th>
+                <th style="white-space: nowrap">
+                    Hình ảnh
+                </th>
+                <th style="white-space: nowrap">
+                    Hành động
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenKhachHang)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoDienThoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaChiNhanHang)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GioiTinh)
+                    </td>
+                    <th>
+                        <img src="@item.UrlHinhAnh" style="height:100px; width:100px" />
+                    </th>
+                    <td>
+                        <a href="~/KhachHang/CapNhat?idKhachHang=@item.ID"> Sửa</a>|
+                        <a onclick="XoaKhachHang(@item.ID)" href="#"> Xóa</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+@section doanJS{
+    <script>
+        var XoaKhachHang = function (idKhachHang) {
+            if (confirm("Bạn có muốn xóa hay không?")) {
+                location.href = '/KhachHang/Xoa?idKhachHang=' + idKhachHang;
+            }
+        };
+
+    </script>    
+}
