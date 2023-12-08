@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_BaiHat" Class="dbBaiHatDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=A107PC06\;Initial Catalog=QL_BaiHat;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QL_BaiHatConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_BaiHat" Member="tbl_BaiHats">
+    <Type Name="tbl_BaiHat">
+      <Column Name="MaBH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenBH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaTL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaNS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

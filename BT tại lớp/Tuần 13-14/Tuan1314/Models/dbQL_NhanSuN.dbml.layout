@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbQL_NhanSuN">
+  <DataContextMoniker Name="/dbQL_NhanSuNDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fb522edd-487b-418c-9ee9-c6009e28e1a7" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/dbQL_NhanSuNDataContext/tbl_Deparment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56cb9515-abb4-4e9b-a66b-ebe16ee3d027" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32e5f4ee-dbb1-4559-83ce-7e9a59f74f7c" absoluteBounds="3.5, 0.875, 2, 1.9631982421874998">
+      <DataClassMoniker Name="/dbQL_NhanSuNDataContext/tbl_Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a9c5985-ce1c-45da-8bd0-d417bc943754" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQL_NhanSuNDataContext/tbl_Deparment/tbl_Deparment_tbl_Employee" />
+      <nodes>
+        <classShapeMoniker Id="fb522edd-487b-418c-9ee9-c6009e28e1a7" />
+        <classShapeMoniker Id="32e5f4ee-dbb1-4559-83ce-7e9a59f74f7c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

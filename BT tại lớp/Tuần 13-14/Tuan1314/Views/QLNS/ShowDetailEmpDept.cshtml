@@ -1,0 +1,67 @@
+﻿@model Tuan1314.Models.EmpDepMix
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowDetailEmpDept</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <h4>EmpDepMix</h4>
+    	<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+    
+            <dd>
+                <img src="~/Images/@Model.Image" class="rounded" width="50px" /> 
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DeptName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DeptName)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "ShowDataEmpDept")
+    </p>
+</body>
+</html>
