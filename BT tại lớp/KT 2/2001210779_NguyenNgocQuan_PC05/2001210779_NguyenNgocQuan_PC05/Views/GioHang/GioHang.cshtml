@@ -1,0 +1,63 @@
+﻿@model IEnumerable<_2001210779_NguyenNgocQuan_PC05.Models.GioHang>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@{
+    var tongtien = 0;
+    var soluong = 0;
+}
+
+<table class="table">
+    <tr>
+        <th>MA SP</th>
+        <th>TEN SP</th>
+        <th>ANH</th>
+        <th>SL</th>
+        <th>DON GIA</th>
+        <th>THANH TIEN</th>
+        <th>ACTION</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        soluong = soluong + item.sl;
+        tongtien = tongtien + int.Parse(item.thanhtien.ToString());
+        <tr>
+            <td>@item.masp</td>
+            <td>@item.ten</td>
+            <td><img src="/Images_KTL2/@item.anh" alt="Alternate Text" width="200px" height="200px" /></td>
+            <td>@item.sl</td>
+            <td>@item.dongia</td>
+            <td>@item.thanhtien</td>
+            <td>
+            <td>
+                <a href="/SanPham/XemChiTiet?msp=@item.masp">Xem Chi Tiết</a>
+                <a href="@Url.Action("ThemVaoGioHang", "GioHang", new { msp = item.masp })">Thêm Vào Giỏ Hàng</a>
+                <a href="@Url.Action("XoaKhoiGioHang", "GioHang", new { msp = item.masp })">Xóa</a>
+                <a href="#" onclick="capNhatGioHang(@item.masp)">Cập Nhật Giỏ Hàng</a>
+            </td>
+            </td>
+        </tr>
+    }
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td style="color:blue">Tổng cộng </td>
+        <td style="color:red">Số lượng: @soluong</td>
+        <td></td>
+        <td style="color:red">Thành tiền:@tongtien </td>
+    </tr>
+</table>
+
+<script>
+    function capNhatGioHang(masp) {
+        var sl = prompt("Nhập giá trị mới:");
+        if (sl !== null) {
+            window.location.href = "@Url.Action("CapNhatGioHang", "GioHang")?msp=" + masp + "&sl=" + sl;
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+﻿@model _2001210779_NguyenNgocQuan_PC05.Models.SanPham
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+
+<div style="background-color:white;display:flex">
+    <div style="display: flex; flex-direction: column; margin-right: 80px">
+        <img src="/Images_KTL2/@Model.Anh" alt="Alternate Text" />
+        <div style=" display:flex;justify-content:space-between">
+            <a href="/GioHang/MuaspOpage?msp=@Model.MaSP" style="padding: 10px; margin: 0 20px; background-color: deepskyblue">Mua Ngay</a>
+            <a href="/GioHang/muaOLaiPage?msp=@Model.MaSP" style="padding: 10px; margin: 0 20px; background-color: deepskyblue; ">Mua Tiep</a>
+        </div>
+    </div>
+    <div>
+        <div style="margin-top:50px">
+            <p style="align-items:flex-start">Ten SP: <span style="color:blue">@Model.TenSP</span> </p>
+            <p>Hang DT: <span style="color:blue">@Model.TenSP</span> </p>
+            <p> Mo Ta Ki Thuat: @Model.MoTa</p>
+            <p>Gia: <span style="color:red">@Model.GiaBan</span> </p>
+
+            <p>SL con: @Model.SLTon</p>
+
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "SanPhamPartial")
+</p>

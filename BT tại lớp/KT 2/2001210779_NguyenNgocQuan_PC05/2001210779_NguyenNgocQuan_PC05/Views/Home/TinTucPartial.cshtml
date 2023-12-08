@@ -1,0 +1,14 @@
+﻿@model IEnumerable<_2001210779_NguyenNgocQuan_PC05.Models.LoaiTin>
+
+<div class="col col-md-2 card">
+    <ul class="list-group list-group-flush text-left">
+        <li class="list-group-item" style="background-color:red;"><a href="#" style="text-transform:uppercase; text-decoration:none; color:white; font-weight:bold;">Tin Tức</a></li>
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item" style="text-transform:uppercase; text-decoration:none;">
+                <a href="@Url.Action("TinTucTheoLoai","TinTuc",new {MLTin = item.MLTin })">@item.TLTin</a>
+            </li>
+        }
+
+    </ul>
+</div>

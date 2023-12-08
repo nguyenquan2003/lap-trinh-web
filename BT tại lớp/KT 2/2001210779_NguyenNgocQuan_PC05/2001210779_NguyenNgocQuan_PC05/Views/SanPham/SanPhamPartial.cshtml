@@ -1,0 +1,37 @@
+﻿@model IEnumerable<_2001210779_NguyenNgocQuan_PC05.Models.SanPham>
+
+@{
+    ViewBag.Title = "SanPhamPartial";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<!--Bootstrap 4-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<h2>Danh sách tất cả sản phẩm</h2>
+<div class="row">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-4" style="margin-top:20px">
+                <img style="" src="/Images_KTL2/@item.Anh" width="70%" height="70%" />
+                @if (item.TenSP.Length > 30)
+                {
+                    <p>
+                        <b>Tiêu đề: @item.TenSP.Substring(0, 30)...</b>
+                        <a href="~/SanPham/XemChiTiet?msp=@item.MaSP">Xem Chi Tiết</a>
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        <b>Tên SP: @item.TenSP</b> <br />
+                        <a href="@Url.Action("XemChiTiet",new { msp = item.MaSP})">Xem chi tiết</a>
+                    </p>
+                }
+            </div>
+        }
+    }
+</div>
